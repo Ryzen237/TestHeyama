@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "TestHeyama",
-  description: "TestHeyama application",
+  title: "Heyama - Object Manager",
+  description:
+    "Create, view, and manage objects with image uploads and real-time synchronization.",
 }
 
 export default function RootLayout({

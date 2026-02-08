@@ -153,7 +153,7 @@ export function ObjectForm({ open, onOpenChange, onSuccess }: ObjectFormProps) {
                 <img
                   src={preview}
                   alt="Preview"
-                  className="h-48 w-full object-cover"
+                  className="h-36 sm:h-48 w-full object-cover"
                 />
                 <button
                   type="button"
@@ -169,7 +169,7 @@ export function ObjectForm({ open, onOpenChange, onSuccess }: ObjectFormProps) {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="flex h-48 w-full flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-muted-foreground/25 text-muted-foreground transition-colors hover:border-muted-foreground/50 hover:text-foreground"
+                className="flex h-36 sm:h-48 w-full flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-muted-foreground/25 text-muted-foreground transition-colors hover:border-muted-foreground/50 hover:text-foreground"
                 disabled={isSubmitting}
               >
                 <Upload className="h-8 w-8" />

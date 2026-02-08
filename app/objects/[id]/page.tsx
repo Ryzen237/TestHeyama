@@ -67,7 +67,7 @@ export default function ObjectDetailPage({
   return (
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-4">
+        <div className="mx-auto flex h-14 sm:h-16 max-w-3xl items-center justify-between px-3 sm:px-4">
           <Button variant="ghost" size="sm" asChild>
             <Link href="/">
               <ArrowLeft className="h-4 w-4" />
@@ -85,9 +85,9 @@ export default function ObjectDetailPage({
         </div>
       </header>
 
-      <main className="mx-auto max-w-3xl px-4 py-8">
+      <main className="mx-auto max-w-3xl px-3 py-4 sm:px-4 sm:py-8">
         <Card className="overflow-hidden">
-          <div className="relative aspect-video w-full overflow-hidden">
+          <div className="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden">
             <img
               src={obj.imageUrl}
               alt={obj.title}
@@ -95,12 +95,12 @@ export default function ObjectDetailPage({
               crossOrigin="anonymous"
             />
           </div>
-          <CardContent className="p-6">
-            <h1 className="text-2xl font-bold tracking-tight text-foreground text-balance">
+          <CardContent className="p-4 sm:p-6">
+            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground text-balance">
               {obj.title}
             </h1>
 
-            <div className="mt-3 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+            <div className="mt-2 sm:mt-3 flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1">
                 <Calendar className="h-3 w-3" />
                 Created{" "}
@@ -119,7 +119,7 @@ export default function ObjectDetailPage({
               </span>
             </div>
 
-            <p className="mt-6 whitespace-pre-wrap text-foreground leading-relaxed">
+            <p className="mt-4 sm:mt-6 whitespace-pre-wrap text-sm sm:text-base text-foreground leading-relaxed">
               {obj.description}
             </p>
           </CardContent>

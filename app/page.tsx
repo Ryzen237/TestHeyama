@@ -26,12 +26,12 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header onCreateClick={() => setFormOpen(true)} />
 
-      <main className="mx-auto max-w-5xl px-4 py-8">
-        <div className="mb-6">
-          <h1 className="text-2xl font-bold tracking-tight text-foreground text-balance">
+      <main className="mx-auto max-w-5xl px-3 py-4 sm:px-4 sm:py-8">
+        <div className="mb-4 sm:mb-6">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground text-balance">
             Objects
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
             Manage your objects. Changes sync in real-time across all clients.
           </p>
         </div>

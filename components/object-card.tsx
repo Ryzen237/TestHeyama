@@ -25,15 +25,15 @@ export function ObjectCard({ object, onDelete, isDeleting }: ObjectCardProps) {
           />
         </div>
       </Link>
-      <CardContent className="p-4">
+      <CardContent className="p-3 sm:p-4">
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0 flex-1">
             <Link href={`/objects/${object.id}`}>
-              <h3 className="truncate font-semibold text-foreground transition-colors hover:text-primary">
+              <h3 className="truncate text-sm sm:text-base font-semibold text-foreground transition-colors hover:text-primary">
                 {object.title}
               </h3>
             </Link>
-            <p className="mt-1 line-clamp-2 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-1 line-clamp-2 text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {object.description}
             </p>
           </div>

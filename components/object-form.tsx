@@ -93,6 +93,7 @@ export function ObjectForm({ open, onOpenChange, onSuccess }: ObjectFormProps) {
 
       if (!res.ok) {
         const data = await res.json()
+        console.error("[v0] API error response:", data)
         throw new Error(data.error || "Failed to create object")
       }
 

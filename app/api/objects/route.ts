@@ -47,9 +47,13 @@ export async function POST(request: NextRequest) {
     }
 
     // Upload image to Vercel Blob (S3-compatible storage)
-    const blob = await put(`heyama/${Date.now()}-${file.name}`, file, {
+    console.log("[v0] Starting blob upload with token:", !!process.env.BLOB_READ_WRITE_TOKEN)
+    const buffer = await file.arrayBuffer()
+    const blob = await put(`heyama/${Date.now()}-${file.name}`, buffer, {
       access: "public",
+      contentType: file.type,
     })
+    console.log("[v0] Blob upload successful:", blob.url)
 
     // Create object in store (simulating MongoDB)
     const obj = createObject({
@@ -60,9 +64,11 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(obj, { status: 201 })
   } catch (error) {
-    console.error("Error creating object:", error)
+    const errorMessage = error instanceof Error ? error.message : String(error)
+    console.error("[v0] Error creating object:", errorMessage)
+    console.error("[v0] Full error:", error)
     return NextResponse.json(
-      { error: "Failed to create object" },
+      { error: `Failed to create object: ${errorMessage}` },
       { status: 500 }
     )
   }

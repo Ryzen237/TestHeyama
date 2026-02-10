@@ -10,4 +10,5 @@ export interface HeyamaObject {
 export interface CreateObjectInput {
   title: string
   description: string
+  imageUrl: string
 }
